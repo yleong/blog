@@ -27,9 +27,9 @@ I then tried taking out vnc altogether. This needs internet access to install.
 The `extra-args` boots the Debian installer to console. After installation,
 grub will try to boot to a graphical console by default. This will cause `virsh
 console deb2` to stop working. To workaround this, press `e` at the grub menu
-and replace `quiet` with `console=ttyS0`. Boot to Debian, then commit this
-change to `/etc/default/grub`. The steps to do so are exactly the same as
-before.
+and replace `quiet` with `console=ttyS0`. For Centos/RH you might have to
+delete `rhgb` too. Boot to Debian, then commit this change to
+`/etc/default/grub`. The steps to do so are exactly the same as before.
 
 Alternatively, right before ending the installation, you can drop into a shell
 and `chroot /target` and edit the grub files that way, then reboot.
